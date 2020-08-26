@@ -22,6 +22,7 @@ Das ist ein Prototyp für eine Website, die Erntehelfer vermitteln soll. Derzeit
 7. Make-File, das für ein einfacheres Starten der Web-App sorgt
 8. Verbesserung der Registrierung mit Bestätigungs-Email
 9. "Passwort vergessen"-Funktion
+10. Tests
 
 ## Starten der Web-App
 
