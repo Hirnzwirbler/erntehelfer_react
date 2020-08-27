@@ -53,4 +53,14 @@ function initial() {
     id: 2,
     name: "admin"
   });
+
+  Role.create({
+    id: 3,
+    name: "farmer"
+  });
+
+  Role.create({
+    id: 4,
+    name: "helper"
+  });
 }

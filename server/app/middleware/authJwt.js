@@ -47,8 +47,48 @@ isAdmin = (req, res, next) => {
   });
 };
 
+isFarmer = (req, res, next) => {
+  User.findByPk(req.userId).then(user => {
+    user.getRoles().then(roles => {
+      for (let i = 0; i < roles.length; i++) {
+        if (roles[i].name === "farmer") {
+          next();
+          return;
+        }
+      }
+
+      res.status(403).send({
+        message: "Require Farmer Role!"
+      });
+      return;
+    });
+  });
+};
+
+isHelper = (req, res, next) => {
+  User.findByPk(req.userId).then(user => {
+    user.getRoles().then(roles => {
+      for (let i = 0; i < roles.length; i++) {
+        if (roles[i].name === "helper") {
+          next();
+          return;
+        }
+      }
+
+      res.status(403).send({
+        message: "Require Helper Role!"
+      });
+      return;
+    });
+  });
+};
+
+
+
 const authJwt = {
   verifyToken: verifyToken,
   isAdmin: isAdmin,
+  isFarmer: isFarmer,
+  isHelper: isHelper,
 };
 module.exports = authJwt;

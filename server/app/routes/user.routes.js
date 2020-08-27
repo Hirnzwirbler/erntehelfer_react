@@ -26,4 +26,16 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );
+
+  app.get(
+    "/api/test/farmer",
+    [authJwt.verifyToken, authJwt.isFarmer],
+    controller.farmerBoard
+  );
+
+  app.get(
+    "/api/test/helper",
+    [authJwt.verifyToken, authJwt.isHelper],
+    controller.helperBoard
+  );
 };

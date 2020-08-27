@@ -42,7 +42,7 @@ db.user.belongsToMany(db.role, {
   otherKey: "roleId"
 });
 
-db.ROLES = ["user", "admin"];
+db.ROLES = ["user", "admin", "farmer", "helper"];
 
 db.campaign = require("../models/campaign.model.js")(sequelize, Sequelize);
 //Relationship between Users and Campaigns

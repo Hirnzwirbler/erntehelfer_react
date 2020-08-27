@@ -29,6 +29,20 @@ class UserService {
   getAdminBoard() {
     return axios.get(API_URL + 'admin', { headers: authHeader() });
   }
+
+    /**
+   * gets content exclusively to farmers
+   */
+  getFarmerBoard() {
+    return axios.get(API_URL + 'farmer', { headers: authHeader() });
+  }
+
+    /**
+   * gets content exclusively to helpers
+   */
+  getHelperBoard() {
+    return axios.get(API_URL + 'helper', { headers: authHeader() });
+  }
 }
 
 export default new UserService();

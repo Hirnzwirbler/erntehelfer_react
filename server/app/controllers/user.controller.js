@@ -14,3 +14,11 @@ exports.allAccess = (req, res) => {
   exports.adminBoard = (req, res) => {
     res.status(200).send("Admin Content.");
   };
+
+  exports.FarmerBoard = (req, res) => {
+    res.status(200).send("Farmer Content.");
+  };
+
+  exports.helperBoard = (req, res) => {
+    res.status(200).send("Helper Content.");
+  };
