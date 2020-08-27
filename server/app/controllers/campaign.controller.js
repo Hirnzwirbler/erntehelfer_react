@@ -2,6 +2,12 @@ const db = require("../models");
 const Campaign = db.campaign;
 const User = db.user;
 
+/**
+ * Adds a new campaign
+ * Work in progress
+ * @param {Int} userId 
+ * @param {Int} campaignId 
+ */
 exports.addCampaign= (userId, campaignId) => {
     return User.findByPK(campaignId)
         .then((user) => {

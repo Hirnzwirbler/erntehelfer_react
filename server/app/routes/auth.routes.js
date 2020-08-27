@@ -1,6 +1,9 @@
 const { verifySignUp } = require("../middleware");
 const controller = require("../controllers/auth.controller");
 
+/**
+ * Routes for the login/authentication process
+ */
 module.exports = function(app) {
   app.use(function(req, res, next) {
     res.header(

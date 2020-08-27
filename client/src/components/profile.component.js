@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import AuthService from "../services/auth.service";
 
+/**
+ * Represents the profile page
+ * Here a user can look into his own profile
+ */
 export default class Profile extends Component {
+  /**
+   * @constructor
+   * @param {Any} props 
+   */
   constructor(props) {
     super(props);
 
@@ -13,6 +21,9 @@ export default class Profile extends Component {
     };
   }
 
+  /**
+   * sets the current user
+   */
   componentDidMount() {
     const currentUser = AuthService.getCurrentUser();
 
@@ -20,6 +31,9 @@ export default class Profile extends Component {
     this.setState({ currentUser: currentUser, userReady: true })
   }
 
+  /**
+   * renders the profile page and adds the user information
+   */
   render() {
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />

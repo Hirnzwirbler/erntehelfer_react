@@ -14,7 +14,14 @@ import BoardUser from "./components/board-user.component";
 import BoardAdmin from "./components/board-admin.component";
 import Impressum from "./components/impressum.component";
 
+/**
+ * Represents the whole Web Application
+ */
 class App extends Component {
+  /**
+   * 
+   * @param {Any} props - It's a React thing
+   */
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
@@ -26,6 +33,9 @@ class App extends Component {
     };
   }
 
+  /**
+   * Checks the roles of the logged in user
+   */
   componentDidMount() {
     const user = AuthService.getCurrentUser();
 
@@ -38,10 +48,16 @@ class App extends Component {
     }
   }
 
+  /**
+   * Logs out the current user
+   */
   logOut() {
     AuthService.logout();
   }
 
+  /**
+   * Render of the navbar
+   */
   render() {
     const { currentUser, showAdminBoard } = this.state;
 

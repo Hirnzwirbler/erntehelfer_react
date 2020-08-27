@@ -2,7 +2,14 @@ import React, { Component } from "react";
 
 import UserService from "../services/user.service";
 
+/**
+ * Represents the Home page
+ */
 export default class Home extends Component {
+  /**
+   * @constructor
+   * @param {Any} props 
+   */
   constructor(props) {
     super(props);
 
@@ -11,6 +18,9 @@ export default class Home extends Component {
     };
   }
 
+  /**
+   * 
+   */
   componentDidMount() {
     UserService.getPublicContent().then(
       response => {
@@ -29,6 +39,9 @@ export default class Home extends Component {
     );
   }
 
+  /**
+   * Renders the Home page
+   */
   render() {
     return (
       <div className="container">

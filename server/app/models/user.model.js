@@ -1,4 +1,6 @@
-  
+/**
+ * Definition of the database for users
+ */
 module.exports = (sequelize, Sequelize) => {
     const User = sequelize.define("users", {
       username: {

@@ -1,3 +1,6 @@
+/**
+ * central file for the server
+ */
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -21,15 +24,10 @@ const db = require("./app/models");
 const Role = db.role;
 
 db.sequelize.sync();
-// force: true will drop the table if it already exists
-// db.sequelize.sync({force: true}).then(() => {
-//   console.log('Drop and Resync Database with { force: true }');
-//   initial();
-// });
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Willkommen beim Erntehelfer Portal!" });
 });
 
 // routes
@@ -42,6 +40,9 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
+/**
+ * Sets initial roles
+ */
 function initial() {
   Role.create({
     id: 1,

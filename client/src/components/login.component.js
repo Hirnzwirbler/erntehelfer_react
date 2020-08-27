@@ -6,6 +6,10 @@ import CheckButton from "react-validation/build/button";
 
 import AuthService from "../services/auth.service";
 
+/**
+ * Checks if fields with required have a value and sets it to a const
+ * @param {String} value - Input from the form
+ */
 const required = value => {
   if (!value) {
     return (
@@ -16,7 +20,14 @@ const required = value => {
   }
 };
 
+/**
+ * Represents the Login
+ */
 export default class Login extends Component {
+  /**
+   * @constructor
+   * @param {Any} props 
+   */
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
@@ -31,18 +42,30 @@ export default class Login extends Component {
     };
   }
 
+  /**
+   * Eventhandler for username
+   * @param {Event} e 
+   */
   onChangeUsername(e) {
     this.setState({
       username: e.target.value
     });
   }
 
+  /**
+   * Eventhandler for password
+   * @param {Event} e 
+   */
   onChangePassword(e) {
     this.setState({
       password: e.target.value
     });
   }
 
+  /**
+   * Handles the login Event
+   * @param {Event} e 
+   */
   handleLogin(e) {
     e.preventDefault();
 
@@ -80,6 +103,9 @@ export default class Login extends Component {
     }
   }
 
+  /**
+   * Renders the Login form
+   */
   render() {
     return (
       <div className="col-md-12">

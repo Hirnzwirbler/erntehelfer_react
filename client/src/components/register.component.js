@@ -6,6 +6,10 @@ import { isEmail } from "validator";
 
 import AuthService from "../services/auth.service";
 
+/**
+ * Checks if fields with required have a value and sets it to a const
+ * @param {String} value - Input from the form
+ */
 const required = value => {
   if (!value) {
     return (
@@ -16,6 +20,10 @@ const required = value => {
   }
 };
 
+/**
+ * Checks if field with email is valid and sets it to a const
+ * @param {String} value - Input from the form
+ */
 const email = value => {
   if (!isEmail(value)) {
     return (
@@ -26,6 +34,10 @@ const email = value => {
   }
 };
 
+/**
+ * Checks if field with username is valid and sets it to const
+ * @param {String} value 
+ */
 const vusername = value => {
   if (value.length < 3 || value.length > 20) {
     return (
@@ -36,6 +48,10 @@ const vusername = value => {
   }
 };
 
+/**
+ * Checks if field with password is valid and sets it to const
+ * @param {String} value 
+ */
 const vpassword = value => {
   if (value.length < 6 || value.length > 40) {
     return (
@@ -46,7 +62,14 @@ const vpassword = value => {
   }
 };
 
+/**
+ * Represents the Register page
+ */
 export default class Register extends Component {
+  /**
+   * @constructor
+   * @param {Any} props 
+   */
   constructor(props) {
     super(props);
     this.handleRegister = this.handleRegister.bind(this);
@@ -67,36 +90,61 @@ export default class Register extends Component {
     };
   }
 
+  /**
+   * Eventhandler for username
+   * @param {Event} e 
+   */
   onChangeUsername(e) {
     this.setState({
       username: e.target.value
     });
   }
 
+  /**
+   * Eventhandler for email
+   * @param {Event} e 
+   */
   onChangeEmail(e) {
     this.setState({
       email: e.target.value
     });
   }
 
+  /**
+   * Eventhandler for password
+   * @param {Event} e 
+   */
   onChangePassword(e) {
     this.setState({
       password: e.target.value
     });
   }
 
+  /**
+   * Eventhandler for experience
+   * @param {Event} e 
+   */
   onChangeExperience(e) {
     this.setState({
       experience: e.target.value
     });
   }
 
+  /**
+   * Eventhandler for country
+   * @param {Event} e 
+   */
   onChangeCountry(e) {
     this.setState({
       country: e.target.value
     });
   }
 
+  /**
+   * Eventhandler for register
+   * Is called when the form is submitted
+   * @param {Event} e 
+   */
   handleRegister(e) {
     e.preventDefault();
 

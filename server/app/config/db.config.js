@@ -1,3 +1,6 @@
+/**
+ * Config Data for Database Connection
+ */
 module.exports = {
     HOST: "localhost",
     USER: "root",

@@ -2,7 +2,15 @@ import React, { Component } from "react";
 
 import UserService from "../services/user.service";
 
+/**
+ * Represents the User Board
+ * This is a placeholder for now
+ */
 export default class BoardUser extends Component {
+  /**
+   * @constructor
+   * @param {Any} props 
+   */
   constructor(props) {
     super(props);
 
@@ -11,6 +19,9 @@ export default class BoardUser extends Component {
     };
   }
 
+  /**
+   * Checks the token
+   */
   componentDidMount() {
     UserService.getUserBoard().then(
       response => {
@@ -31,6 +42,9 @@ export default class BoardUser extends Component {
     );
   }
 
+  /**
+   * renders the User Board
+   */
   render() {
     return (
       <div className="container">

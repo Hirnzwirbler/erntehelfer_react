@@ -2,7 +2,15 @@ import React, { Component } from "react";
 
 import UserService from "../services/user.service";
 
+/**
+ * Represents the Admin Board
+ * Is a placeholder for now
+ */
 export default class BoardAdmin extends Component {
+  /**
+   * @constructor
+   * @param {Any} props 
+   */
   constructor(props) {
     super(props);
 
@@ -11,6 +19,9 @@ export default class BoardAdmin extends Component {
     };
   }
 
+  /**
+   * Checks the role of the user and the token
+   */
   componentDidMount() {
     UserService.getAdminBoard().then(
       response => {
@@ -31,6 +42,9 @@ export default class BoardAdmin extends Component {
     );
   }
 
+  /**
+   * Renders the Admin Board
+   */
   render() {
     return (
       <div className="container">

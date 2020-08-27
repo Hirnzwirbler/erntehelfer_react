@@ -1,4 +1,6 @@
-
+/**
+ * Definition of the database for the campaigns
+ */
 module.exports = (sequelize, Sequelize) => {
     const Campaign = sequelize.define("campaigns", {
         

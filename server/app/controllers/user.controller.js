@@ -1,3 +1,8 @@
+/**
+ * Controller for the diffrent boards for the appropriate role
+ * @param {Any} req 
+ * @param {Any} res 
+ */
 exports.allAccess = (req, res) => {
     res.status(200).send("Public Content.");
   };
