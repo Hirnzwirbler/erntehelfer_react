@@ -12,6 +12,8 @@ import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardAdmin from "./components/board-admin.component";
+import BoardFarmer from "./components/board-farmer.component";
+import BoardHelper from "./components/board-helper.component";
 import Impressum from "./components/impressum.component";
 
 /**
@@ -29,6 +31,8 @@ class App extends Component {
     this.state = {
       showModeratorBoard: false,
       showAdminBoard: false,
+      showFarmerBoard: false,
+      showHelperBoard: false,
       currentUser: undefined
     };
   }
@@ -42,7 +46,8 @@ class App extends Component {
     if (user) {
       this.setState({
         currentUser: user,
-        showModeratorBoard: user.roles.includes("ROLE_MODERATOR"),
+        showFarmerBoard: user.roles.includes("ROLE_FARMER"),
+        showHelperBoard: user.roles.includes("ROLE_HELPER"),
         showAdminBoard: user.roles.includes("ROLE_ADMIN")
       });
     }
@@ -59,7 +64,7 @@ class App extends Component {
    * Render of the navbar
    */
   render() {
-    const { currentUser, showAdminBoard } = this.state;
+    const { currentUser, showAdminBoard, showFarmerBoard, showHelperBoard } = this.state;
 
     return (
       <Router>
@@ -85,6 +90,22 @@ class App extends Component {
                 <li className="nav-item">
                   <Link to={"/admin"} className="nav-link">
                     Admin Board
+                  </Link>
+                </li>
+              )}
+
+              {showFarmerBoard && (
+                <li className="nav-item">
+                  <Link to={"/farmer"} className="nav-link">
+                    Farmer Board
+                  </Link>
+                </li>
+              )}
+
+              {showHelperBoard && (
+                <li className="nav-item">
+                  <Link to={"/helper"} className="nav-link">
+                    Helper Board
                   </Link>
                 </li>
               )}
@@ -136,6 +157,8 @@ class App extends Component {
               <Route exact path="/profile" component={Profile} />
               <Route path="/user" component={BoardUser} />
               <Route path="/admin" component={BoardAdmin} />
+              <Route path="/farmer" component={BoardFarmer} />
+              <Route path="/helper" component={BoardHelper} />
               <Route path="/impressum" component={Impressum} />
             </Switch>
           </div>
