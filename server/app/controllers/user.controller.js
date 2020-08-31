@@ -15,7 +15,7 @@ exports.allAccess = (req, res) => {
     res.status(200).send("Admin Content.");
   };
 
-  exports.FarmerBoard = (req, res) => {
+  exports.farmerBoard = (req, res) => {
     res.status(200).send("Farmer Content.");
   };
 
